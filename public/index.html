@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="../ejs.min.js"></script>
+    <script src="js/views.js"></script>
+</head>
+
+<body class="bodyContainer" onload="init()">
+
+    <header class="header">
+        <h1 class="">Sound Hub</h1>
+    </header>
+
+    <div class="contain">
+
+        <aside class="asideL">
+            <section class="nav">
+                <a id="page_home" href="/">Home</a>
+            </section>
+
+            <section class="nav">
+                <a id="page_songs" href="/songs">Songs</a>
+            </section>
+
+            <section class="nav">
+                <a id="page_upload" href="/songs/upload">Upload</a>
+            </section>
+
+            <section class="nav">
+                <a id="page_playlist" href="/songs/playlist">Playlist</a>
+            </section>
+
+            <section class="nav">
+                <a id="page_remote" href="/player/remote">Remote</a>
+                </section>
+
+            <section class="nav">
+                <a>Search</a></br>
+                     <input style="width:130px" type='text'id='search_bar'>
+                 </section>
+
+        </aside>
+
+        <main class="mainContent" id="player">
+
+
+            <br>
+            <section class="infoSongs">
+                <h1>Your collection</h1>
+            </section>
+
+            <section class="infoSongs">
+                <article class="indexFields">
+                <h2>Songs : </h2>
+                </article>
+            </section>
+
+            <section class="infoSongs">
+                <article class="indexFields">
+                    <h2>Genres : </h2>
+                </article>
+            </section>
+
+            <section class="infoSongs">
+                <article class="indexFields">
+                    <h2>Artists : </h2>
+                </article>
+            </section>
+
+            <br>
+            <section style="text-align:center; color: wheat;">
+
+                <article>
+                    <h1> Artists: <h1>
+                </article>
+
+                <article class="indexFields">
+                    <a style="color:white" href=""></a>
+                </article>
+
+
+
+
+
+
+        </main>
+
+        <aside id="asideR" class="asideR">
+
+            <section class="nav">
+                <a href="https://it.wikipedia.org/wiki/Kanye_West">Kanye West</a>
+            </section>
+
+            <section class="nav">
+                <a href="https://it.wikipedia.org/wiki/Drake_(rapper)">Drake</a>
+            </section>
+
+            <section class="nav">
+                <a href="http://www.travisscott.com/">Travis Scott</a>
+            </section>
+
+            <section class="nav">
+                <a href="https://it.wikipedia.org/wiki/Iyaz">Iyaz</a>
+            </section>
+
+            <section class="nav">
+                <a href="https://it.wikipedia.org/wiki/Adam_Levine">Adam Levine</a>
+            </section>
+
+            <section class="nav">
+                <a href="https://it.wikipedia.org/wiki/Lil_Tecca">Lil tecca</a>
+            </section>
+
+            <section class="nav">
+                <a href="https://it.wikipedia.org/wiki/Jason_Mraz">Jason Mraz</a>
+            </section>
+
+            <section class="nav">
+                <a href="https://it.wikipedia.org/wiki/Neffa">Neffa</a>
+            </section>
+
+
+            <section class="nav">
+                <a href="https://it.wikipedia.org/wiki/Lil_Baby">Lil Baby</a>
+                <p> </p>
+            </section>
+        </aside>
+
+
+    </div>
+
+
+    <footer>
+
+        <div id="player">
+            <header>
+                <p class="title">Player</p>
+            </header>
+
+            <article>
+                <p id="nameSong"></p>
+                <img id="imagePlayer" src="images/0.jpg">
+            </article>
+
+            <section class="seek">
+                <p id="elapsed"> </p>
+                <progress style="width: 330px; height: 10px;" id="timeProg"></progress>
+                <p id="remain"> </p>
+            </section>
+
+
+            <section class="player">
+
+                <button style="background-image: url(images/prev.svg);" class="small" id="prev"></button>
+
+                <button style="background-image: url(images/pause.svg);" id="pause"></button>
+
+                <button style="background-image: url(images/play.svg);" id="play"></button>
+
+                <button style="background-image: url(images/next.svg);" class="small" id="next"></button>
+            </section>
+
+
+            <aside class="volume">
+                <button style="background-image: url(images/mute.svg);" id="mute"></button>
+                <button style="background-image: url(images/low.svg);" id="low"></button>
+                <button style="background-image: url(images/loud.svg);" id="loud"></button>
+                <input type="range" id="volumerange">
+            </aside>
+        </div>
+
+
+        <p>Gualandris Andrea - Last Update 11-10-2021</p>
+        <span>&#169; copyright all rights reserved</span>
+        <p></p>
+    </footer>
+
+
+
+
+
+
+
+    <!-- This is the hidden audio element which will play your songs
+         controlled from the #player buttons -->
+    <audio id="player-audio" class="player-footer" style="display:none"></audio>
+
+    <!-- Script where the init_player function is implemented -->
+
+
+
+</body>
+
+
+</html>

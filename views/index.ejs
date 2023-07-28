@@ -1,0 +1,32 @@
+
+
+<main class="mainContent">
+    <br>
+          <section class="infoSongs">
+        <h1>Your collection</h1>
+              <article class="indexFields">
+                  <h2>Songs : <%= n.numSongs %></h2>
+              </article>
+      
+              <article class="indexFields">
+                  <h2>Genres : <%= n.numGenres %></h2>
+              </article>
+      
+              <article class="indexFields">
+                  <h2>Artists : <%= n.numArtists%></h2>
+              </article>
+          
+          </section>
+            <br>
+          <section style="text-align:center; color: wheat;">
+            
+             <article><h1> Artists: <h1></article>
+                <%
+                    for(artist in artists) {
+                %>
+       <article class="indexFields">
+          <a style="color:white" href="songs/?artist=<%= artist %>"><%= artist %></a>
+                    </article> 
+                    <% } %>
+      </main>
+

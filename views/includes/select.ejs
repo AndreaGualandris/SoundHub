@@ -1,0 +1,6 @@
+<label for="<%=name %>"><%=label %></label>
+<select name="<%=name %>">
+<% options.forEach(o=>{ -%>
+<option value="<%=o%>" <%= selected == o ? "selected" : "" %>><%=o%></option>
+<% }) -%>
+</select>

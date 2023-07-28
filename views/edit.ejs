@@ -1,0 +1,40 @@
+
+        <main class="main-upload">
+
+            <section class="labels">
+                <label for="title">Song Name</label>
+                <label for="artist">Artist</label>
+                <label for="album">Album</label>
+                <label for="description">Description</label>
+                <label for="genre">Choose the song genre</label>
+                <label for="file">Insert your song</label>
+                <label for="favourite">Favourite or Normal:</label>
+                <label for="myRange">Select range</label>
+            </section>
+
+            <form enctype="multipart/form-data" class="forms" method="POST" action="/songs/<%= song._id%>?_method=PUT">
+                <input type="text" id="name" name="title">
+                <input type="text" id="artist" name="artist">
+                <input type="text" id="album" name="album">
+                <textarea id="desc" name="description" rows="4" cols="25">
+                                             </textarea>
+                <select name="genre" id="genre">
+                    <option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Rap">Rap</option>
+                    <option value="Classic">Classic</option>
+                    <option value="Jazz">Jazz</option>
+                </select>
+                <input type="file" id="file" />
+                <section class="radB">
+                    <label for="favourite">Favourite</label>
+                    <input type="radio" id="favourite" name="favourite" value="true">
+                    <label for="notfavoutite">Normal</label>
+                    <input type="radio" id="favoutite" name="favourite" value="false">
+                </section>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <input type="submit" value="Edit Song" id="upload">
+            </form>
+
+
+        </main>

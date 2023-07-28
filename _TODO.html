@@ -1,0 +1,78 @@
+<html><head><title>exercises/8-socket</title><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fira+Sans|Fira+Mono"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><style>body,* {font-family: "Fira Sans";scroll-behavior: smooth;}body {margin: 1em;}#usi-logo {width: 75px;height: 75px;}header {display: flex;align-content: space-between;width: 100%;justify-items: center;}header ul {list-style: none;}header .title {flex: 1;margin-left: 1em;}html {min-height: 100vh;}pre,code {font-family: "Fira Mono"}pre {background: rgb(202, 227, 255);padding: 1em;}td {text-align: center}td:last-child {text-align: left;}th {font-weight: normal;color: rgb(0, 61, 131);border-bottom: 1px solid #003d83;}table {width: 100%}table tr:hover {background-color: rgb(151, 195, 236);}span.task {display: inline-flex;border-radius: 50%;border: 1px solid white;background: #ffbc00;width: 4em;height: 4em;justify-content: center;align-items: center;font-weight: normal;margin-top: 2em;}.deadline {text-align: right;}p.deadline {font-size: 2em;}.deadline b {border-bottom: 1px solid black;}span.get {font-weight: bold; color: #43a047;}span.post {font-weight: bold; color: #F3C142;}span.delete {font-weight: bold; color: #FF0000;}span.put {font-weight: bold; color: #4a90e2;}span.patch {font-weight: bold; color: #666666;}</style></head><body><header>    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="usi-logo" x="0px" y="0px" width="200" height="200" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve" class="injected-svg svg"><g><path d="M180,41.7h-51.1V31.1h42.2C153.1,12.5,127.8,1,99.9,1C45.2,1.1,0.9,45.4,1,100.1c0,26.8,10.7,51.1,28.1,68.9   c-1.4-2-2.4-4.1-3-6.1c-1-3.5-1-5.9-1.1-15.8v-47.1h14.8v48.5c0,3.4-0.1,6.6,1,9.6c3,7.6,11.3,8.5,16,8.5c2.3,0,8.3-0.1,12.6-3.9   c4.4-3.9,4.4-8.4,4.4-15v-47.7h14.9v49.7c-0.1,8.9-0.1,16.3-8.5,23.5c-8,7-18.4,7.7-23.8,7.7c-4.8,0-9.5-0.6-14-2.1   c-1.8-0.6-3.5-1.4-5-2.3c17.1,14,39,22.4,62.8,22.4c54.7-0.1,99-44.4,98.9-99.1C199,78.1,191.9,58,180,41.7z M175.3,94.4l-6.3-9   c2.1-1.4,8.7-5.7,8.7-17.7c0-2-0.2-4.1-1-6.2c-1.7-4.1-4.6-4.9-6.6-4.9c-3.6,0-4.9,2.5-5.7,4.3c-0.5,1.3-0.6,1.5-1.8,6.6l-1.5,6.9   c-0.9,3.6-1.3,5.4-2,7.2c-1.1,2.6-4.5,9.6-14,9.6c-10.9,0-17.8-9.2-17.8-22.6c0-12.3,6.1-19,11.6-23l6.6,8.8   c-2.8,1.9-8.5,5.7-8.5,14.8c0,5.8,2.6,10.8,7,10.8c4.9,0,5.8-5.3,6.8-10.5l1.3-5.9c1.6-7.7,4.8-18.6,17-18.6   c13.1,0,18.4,12.2,18.4,24.3c0,3.2-0.3,6.7-1.3,10.2C185.1,83.4,182.3,90.1,175.3,94.4z"></path></g></svg><div class="title"><h2>Web Atelier 2021</h2><h1>Exercise  8 - Real-time Web Applications with Socket.io</h1></div><div class="deadline"><p>11.11.2021</p><p class="deadline">Deadline: <b>19.11.2021</b></p></div><ul><li>Prof. Cesare Pautasso</li><li>Dr. Andrea Gallidabino</li><li>Susanna Ardig&ograve;</li><li>Fabio Di Lauro</li><li>Souhaila Serbout</li><li>Abdalazim Nouran Ayman Roushdy </li></ul></header><aside><h1>GitHub Classroom: <a href="https://classroom.github.com/a/">Invite Link</a></h1></aside><h1 id="goal">Goal</h1>
+<p>In this exercise you will remove the need to use the browser refresh button to keep the information displayed in your music application up to date and make it possible to share and edit the content of the music collection with multiple users connected from multiple devices at the same time.</p>
+<p>To solve this exercise you will need to run JavaScript both in the Web browser and in the Web server.</p>
+<p>This assignment builds on all the previous assignments with the goal to add support for:</p>
+<ol>
+<li>synchronizing the song table view when the music collection content is modified</li>
+<li>remotely control the player and its playlist from a different browser</li>
+</ol>
+<h1 id="tasks">Tasks</h1>
+<p>To satisfy the requirements we suggest you develop your code following these steps while reusing and extending your previous assignment solutions as much as possible. </p>
+<h2 id="task---connect-socket"><span class='task'>Task 1.</span>  Connect Socket</h2>
+<ol>
+<li>When the browser opens the single-page application, it should open a socket connection to the server.</li>
+<li>Display on the web application page whether the socket is currently connected or disconnected (e.g., add a specific status element or change the page background color)</li>
+</ol>
+<h2 id="task---notify-updates"><span class='task'>Task 2.</span>  Notify Updates</h2>
+<p>When one browser uploads a new song or updates the content of the database, the other connected browsers should be notified and automatically refresh the displayed information as follows.</p>
+<ol>
+<li>the song table view should be refreshed</li>
+<li>the editor view shoud be refreshed</li>
+<li>the player view should be updated without interrupting the playback (for example if the title of the song currently being played or displayed in the playlist was changed)</li>
+</ol>
+<h2 id="task---notify-deletes"><span class='task'>Task 3.</span>  Notify Deletes</h2>
+<p>When one browser deletes one of the songs, the other connected browsers should be notified and automatically refresh the currently displayed views.</p>
+<ol>
+<li>The corresponding row should be removed from the song table</li>
+<li>If the editor view is editing the deleted song, it should simply disappear</li>
+<li>If the player is playing the deleted song, it should stop playing it and advance to the next song</li>
+</ol>
+<h2 id="task---playlist-remote-control"><span class='task'>Task 4.</span>  Playlist remote control</h2>
+<p>Add songs to the player playlist from a different browser.</p>
+<ol>
+<li>In the song table add a new button next to each song</li>
+<li>When the button is clicked, broadcast a message to all connected browsers to add the corresponding song to their local playlist.</li>
+</ol>
+<h2 id="task---player-remote-control"><span class='task'>Task 5.</span>  Player remote control</h2>
+<p>Create a new page at this route:</p>
+<pre><code><span class='get'>GET</span> <span class="hljs-regexp">/player/</span>remote
+</code></pre>
+<p>This page should display at least the play and pause buttons. There should not be any local <code>&lt;audio&gt;</code> element in this page.</p>
+<ol>
+<li>When the buttons are clicked, their event handler function should emit a message on the socket which will be broadcast to all other connected browsers. </li>
+<li>The browsers which display the main music application page should receive the message and use it to change the playback state of their local player.</li>
+</ol>
+<p>Test this page from your mobile phone to see if you can start or stop the player on your laptop.</p>
+<h2 id="task---optional-features"><span class='task'>Task 6.</span>  Optional Features</h2>
+<ol>
+<li>Synchronize the editor view as soon as the content of the form changes, without having to click on the submit button</li>
+<li>What if two editors are open at the same time on the same song in different browsers? Add a warning message stating that someone else is editing the same song</li>
+<li>Let the user decide if they want to allow others to add songs to their playlist. Add a toggle button to accept or ignore incoming song addition messages.</li>
+<li>Extend the behavior of the Delete button so that the song is deleted only after ALL users have clicked on the Delete button from all connected browsers. Count how many users have already clicked on the button and display the number (e.g., 0/N -&gt; N/N)</li>
+<li>Extend the remote playlist control so that the player will play the song selected by the majority of the connected users. </li>
+</ol>
+<h2 id="mastery-check-topics">Mastery Check Topics</h2>
+<p>Solving this exercise will demonstrate mastery for the following topics:</p>
+<ul>
+<li>4. APIs<ul>
+<li>4.1. Browser  <ul>
+<li>4.1.10. Socket.io  </li>
+</ul>
+</li>
+<li>4.2. Server  <ul>
+<li>4.2.7. Socket.io<ul>
+<li>4.2.7.1. on  </li>
+<li>4.2.7.2. emit   </li>
+<li>4.2.7.3. broadcast   </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>5. Networking  <ul>
+<li>5.2. WebSockets  </li>
+</ul>
+</li>
+</ul>
+<footer></footer></body></html>

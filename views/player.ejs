@@ -1,0 +1,64 @@
+
+
+<!--     <div onload="init()" class="playerP"style="display: flex; flex-direction: row;">
+
+        <aside class="asideL">
+            <section class="nav navR">
+                <a href="">Playlists</a>
+            </section>
+
+        </aside> -->
+
+        <div class="mainContent" id="player" >
+
+            <header>
+                <p class="title">Player</p>
+            </header>
+
+            <article>
+                <p id="nameSong"><%= song.title %></p>
+                    <img id="imagePlayer" src="/images/<%= song._id%>.jpg">
+            </article>
+
+            <section class="seek">
+                <p id="elapsed"> </p>
+                <progress style="width: 330px; height: 10px;" id="timeProg"></progress>
+                <p id="remain"> </p>
+            </section>
+
+
+            <section class="player">
+
+                <button style="background-image: url(images/prev.svg);" class="small" id="prev"></button>
+
+                <button style="background-image: url(images/pause.svg);" id="pause"></button>
+
+                <button style="background-image: url(images/play.svg);" id="play"></button>
+
+                <button style="background-image: url(images/next.svg);" class="small" id="next"></button>
+            </section>
+
+
+            <aside class="volume">
+                <button style="background-image: url(images/mute.svg);" id="mute"></button>
+                <button style="background-image: url(images/low.svg);" id="low"></button>
+                <button style="background-image: url(images/loud.svg);" id="loud"></button>
+                <input type="range" id="volumerange">
+            </aside>
+            
+        </div>
+
+       <!--  <aside class="asideR">
+            <section class="nav navR">
+                <a href="https://it.wikipedia.org/wiki/Kanye_West">Playlist</a>
+            </section>
+            
+             toHtml() method from class Playlist return all pieces of html for each songs 
+
+            <section class="nav navR">
+                <a href="">song1</a>
+            </section>
+        </aside> -->
+        
+        <audio src="<%=song.src%>" id="player-audio" style="display:none"></audio>
+    </div>

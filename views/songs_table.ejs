@@ -1,0 +1,57 @@
+
+
+<main class="song_table">
+
+
+    <header class="headgrid header">
+        <span></span>
+        <a id="filename" href="songs.html?sort=filename">Filename</a>
+        <a href="songs.html?sort=duration">Duration (MM:SS)</a>
+        <a href="songs.html?sort=size">Size (MB)</a>
+        <a href="songs.html?sort=title">Title</a>
+        <a href="songs.html?sort=album">Album</a>
+        <a href="songs.html?sort=artist">Artist</a>
+        <a href="songs.html?sort=genre">Genre</a>
+        <a href="songs.html?sort=desc">Description</a>
+        <a href="songs.html?sort=quality">Quality</a>
+        <a href="songs.html?sort=favourite">Fav</a>
+    </header>
+
+        <% for (var i = 0; i < songs_data.length; i++) {%>
+            <article class="song" data-src="<%=songs_data[i].src%>" data-sid="undefined" data-id="<%=songs_data[i]._id%>">
+                <a class="btn_play" rel="play" href="/songs/<%=songs_data[i]._id%>" target="player">Play</a>
+               <!-- <audio controls style="width:20; height:20" src="..<%=songs_data[i].src.split('public')[1]%>"></audio> --> 
+                <span class="filename"><%=songs_data[i].filename%></span>
+                <span class="duration"><%=songs_data[i].duration%></span>
+                <span class="size"><%=songs_data[i].size%></span>
+                <span class="title"><%=songs_data[i].title%></span>
+                <span class="album"><%=songs_data[i].album%></span>
+                <span class="artist"><%=songs_data[i].artist%></span>
+                <span class="genre"><%=songs_data[i].genre%></span>
+                <span class="desc"><%=songs_data[i].description%></span>
+                <span><progress class="quality" min="0" max="10" value="<%=songs_data[i].quality%>"></progress></span>
+                <%
+                var fav_on=""
+                if(songs_data[i].favourite == true) {
+                    fav_on = "fav_on"
+                    fav = false
+                }
+                else{
+                    fav_on = ""
+                    fav = true
+                }
+                %>
+               <form method="POST" action='/songs/<%=songs_data[i]._id%>'>
+                   <input style= "display:none" value="true" name="favourite">
+                <button class="favourite" id="<%=fav_on%>" data-action="fav" id="fav_undefined" data-fav="<%=songs_data[i].favourite%>">&#9733;</button>
+                </form>
+             <!--   <form method="POST" action="/songs/<%= songs_data[i]._id %>/?_method=DELETE"> -->
+                <button class="delete" data-id="<%=songs_data[i]._id%>" data-action="delete" id="delete_undefined">&#215;</button>
+               <!--  </form>     -->                    
+                <a class="edit" rel="edit" href="/songs/<%= songs_data[i]._id %>/edit">Edit</a>
+                <a rel="download" href="..<%=songs_data[i].src.split('public')[1]%>" download>MP3</a>
+                <a rel="addSong" href="#" data-src="<%=songs_data[i].src%>">Add to playlist</a>
+            </article> 
+        <%     }    %>
+
+</main>
